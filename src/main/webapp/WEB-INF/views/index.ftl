@@ -13,12 +13,12 @@
 
 </head>
 <body>
-		<#include "header.html">
+		<#include "header.ftl">
 		<div class="container">
 		<div class="error text-center">
 			<#if errorMessage??> ${errorMessage} </#if>
 		</div>
-		<form class="form-horizontal uform" action="LoginController"
+		<form class="form-horizontal uform" action="loginController"
 			method="Post" id="loginForm">
 			<h2 class="text-center">Login</h2>
 			<div class="form-group">
@@ -52,7 +52,7 @@
 			</div>
 		</form>
 	</div>
-	<#include "footer.html">
+	<#include "footer.ftl">
 	<script src="Assets/JS/jquery-3.6.0.min.js"></script>
 	<!-- jquery -->
 	<script src="Assets/Libraries/bootstrap/js/bootstrap.min.js"></script>

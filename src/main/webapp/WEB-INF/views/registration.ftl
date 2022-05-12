@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="Assets/CSS/register.css"></link>
 </head>
 <body>
-	<#include "header.html">
+	<#include "header.ftl">
 
 	<div class="container">
 		<div class="error text-center">
@@ -20,13 +20,13 @@
 			</#if>
 		</div>
 		<form class="form-horizontal" id="reg_form" method="post"
-			action='<#if userSession?? || admin??>UpdateController<#else>RegisterController</#if>'
+			action='<#if (userSession?? || admin??) && userData??>updateController<#else>registerController</#if>'
 			enctype="multipart/form-data">
 			<#if userData??>
 				<input type="text" name="id" value="${userData.id}" hidden="hidden">
 			</#if>
 			<h2 class="text-center">
-				<#if userSession?? || admin??> Update Profile <#else> Register </#if>
+				<#if (userSession?? || admin??) && userData??> Update Profile <#else> Register </#if>
 			</h2>
 			<div class="form-group">
 				<label for="inputName" class="col-sm-2 control-label">Name</label>
@@ -316,14 +316,14 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-lg btn-success">
-						<#if userSession?? || admin??>Update<#else>Register</#if>
+						<#if (userSession?? || admin??) && userData??>Update<#else>Register</#if>
 					</button>
 					<button type="reset" class="btn btn-lg btn-danger btn-reset">Reset</button>
 				</div>
 			</div>
 		</form>
 	</div>
-	<#include "footer.html">
+	<#include "footer.ftl">
 	<script src="Assets/JS/jquery-3.6.0.min.js"></script>
 	<!-- jquery -->
 	<script src="Assets/Libraries/clonedata/cloneData.js"></script>

@@ -9,14 +9,14 @@
 <link rel="stylesheet" href="Assets/CSS/forgot.css"></link>
 </head>
 <body>
-	<#include 'header.html'>
+	<#include 'header.ftl'>
 	<div class="container">
 		<#if error??>
 			<div class="error text-center">
 				${error}
 			</div>
 		</#if>
-		<form class="form-horizontal" action="ForgotController" method="post"
+		<form class="form-horizontal" action="forgotController" method="post"
 			id="forgot-form">
 			<h2 class="text-center">Forgot Password</h2>
 			<div class="form-group">
@@ -75,7 +75,7 @@
 			</div>
 		</form>
 	</div>
-	<#include 'footer.html'>
+	<#include 'footer.ftl'>
 	<script src="Assets/JS/jquery-3.6.0.min.js"></script>
 	<!-- jquery -->
 	<script src="Assets/Libraries/bootstrap/js/bootstrap.min.js"></script>

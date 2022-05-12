@@ -15,12 +15,12 @@
 <link rel="stylesheet" href="Assets/CSS/dashboard.css">
 </head>
 <body>
-		<#include "header.html">
+		<#include "header.ftl">
 
 		<div class="container">
 			<nav class="text-right">
 				<a href="registration" class="btn btn-success">Add User</a> <a
-					href="LogoutController" class="btn btn-danger">Logout</a>
+					href="logoutController" class="btn btn-danger">Logout</a>
 			</nav>
 			<br>
 			<table id="users-table" class="table table-striped">
@@ -42,7 +42,7 @@
 				<tbody>
 				</tbody>
 			</table>
-			<form class="form-inline importform" action="UsersController"
+			<form class="form-inline importform" action="usersController"
 				method="post" enctype="multipart/form-data" id="fileUpload">
 				<input type="file"
 					accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"

@@ -21,10 +21,10 @@
 </head>
 <body>
 	<#if userSession??>
-	<#include "header.html">
+	<#include "header.ftl">
 		<div class="container text-center">
 			<nav class="text-right">
-				<a href="LogoutController" class="btn btn-danger">Logout</a>
+				<a href="logoutController" class="btn btn-danger">Logout</a>
 			</nav>
 			<h2 class="text-center">
 				Welcome
@@ -49,13 +49,13 @@
 					Game: ${userSession.game}
 				</h4>
 			</div>
-			<form action="UserDataController" class="text-center" method="post">
+			<form action="userDataController" class="text-center" method="post">
 				<input type="text" name="id" value="${userSession.id}"
 					hidden="hidden"> <input type="submit"
 					class="btn btn-primary" value="Edit Profile">
 			</form>
 		</div>
-	<#include "footer.html">
+	<#include "footer.ftl">
 		<#else>
 	</#if>
 	<script src="Assets/JS/jquery-3.6.0.min.js"></script>

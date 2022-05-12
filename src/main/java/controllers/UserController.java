@@ -117,7 +117,7 @@ public class UserController {
 	}
 
 	@GetMapping("/dashboard")
-	public String dash(HttpSession session, HttpServletResponse response) {
+	public String admindashboard(HttpSession session, HttpServletResponse response) {
 
 		response.setHeader("Cache-Control", "no-cache"); // Forces caches to obtain a new copy of the page from the
 															// origin server
@@ -131,7 +131,7 @@ public class UserController {
 			return "redirect:index";
 	}
 
-	@PostMapping(path = "/RegisterController", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
+	@PostMapping(path = "/registerController", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
 	public String registration(@Valid @ModelAttribute User user, BindingResult br,
 			@RequestPart MultipartFile user_photo, HttpSession session, Model model) {
 		String errors = "";
@@ -157,7 +157,7 @@ public class UserController {
 		}
 	}
 
-	@PostMapping("/LoginController")
+	@PostMapping("/loginController")
 	public String login(@RequestParam String email, @RequestParam String password, Model model, HttpSession session,
 			HttpServletResponse response) {
 
@@ -186,7 +186,7 @@ public class UserController {
 		}
 	}
 
-	@GetMapping("/LogoutController")
+	@GetMapping("/logoutController")
 	public String logout(HttpSession session, HttpServletResponse response) {
 		response.setHeader("Cache-Control", "no-cache"); // Forces caches to obtain a new copy of the page from the
 															// origin server
@@ -197,7 +197,7 @@ public class UserController {
 		return "redirect:index";
 	}
 
-	@PostMapping("/UserDataController")
+	@PostMapping("/userDataController")
 	public String UserData(@RequestParam int id, Model model, HttpSession session, HttpServletResponse response) {
 		response.setHeader("Cache-Control", "no-cache"); // Forces caches to obtain a new copy of the page from the
 		// origin server
@@ -213,7 +213,7 @@ public class UserController {
 		}
 	}
 
-	@PostMapping(path = "/DashboardController")
+	@PostMapping(path = "/dashboardController")
 	@ResponseBody
 	public JsonObject dashboard() {
 		List<User> users = service.getAllUser();
@@ -235,14 +235,14 @@ public class UserController {
 		return jobj;
 	}
 
-	@PostMapping("/DeleteController")
+	@PostMapping("/deleteController")
 	@ResponseBody
 	public boolean delete(@RequestParam int id) {
 		log.info(id + ": user deleted");
 		return service.deleteUser(id);
 	}
 
-	@PostMapping("/UsersController")
+	@PostMapping("/usersController")
 	public String addUsers(@RequestPart MultipartFile excelFile, Model model) throws IOException {
 		String fileType = excelFile.getContentType();
 		if (fileType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) {
@@ -313,13 +313,13 @@ public class UserController {
 		return "dashboard";
 	}
 
-	@PostMapping(path = "/EmailCheckController")
+	@PostMapping(path = "/emailCheckController")
 	@ResponseBody
 	public boolean checkEmail(@RequestParam String email) {
 		return service.checkEmail(email);
 	}
 
-	@PostMapping(path = "/UpdateController", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
+	@PostMapping(path = "/updateController", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
 	public String update(@Valid @ModelAttribute User user, BindingResult br, @RequestPart MultipartFile user_photo,
 			@RequestParam String[] address_id, HttpSession session, Model model) {
 		String errors = "";
@@ -359,7 +359,7 @@ public class UserController {
 			return "redirect:dashboard";
 	}
 
-	@PostMapping("/ForgotController")
+	@PostMapping("/forgotController")
 	public String forgot(@ModelAttribute User user, Model model) {
 		if (service.updatePassword(user)) {
 			log.info(user.getEmail() + ": " + "Updated password");

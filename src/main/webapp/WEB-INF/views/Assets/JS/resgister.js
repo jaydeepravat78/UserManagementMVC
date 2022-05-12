@@ -39,7 +39,7 @@ $("#reg_form").validate({
 			required: true,
 			validate_email: true,
 			remote: {
-				url: "EmailCheckController",
+				url: "emailCheckController",
 				type: "post",
 			}
 		},

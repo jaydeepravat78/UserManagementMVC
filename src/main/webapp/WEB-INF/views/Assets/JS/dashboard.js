@@ -17,7 +17,7 @@ $(document).ready(function() {
 		ajax:
 		{
 			type: "post",
-			url: "DashboardController",
+			url: "dashboardController",
 			dataType: "JSON",
 			error: function(xhr) {
 				console(xhr);
@@ -54,7 +54,7 @@ $(document).ready(function() {
 				"targets": 6,
 				className: 'dt-body-center',
 				"render": function(data, type, row, meta) {
-					return '<form action="UserDataController" method="post"><input type="text" name="id" value="' + row.id + '" hidden><input type="submit" class="btn btn-sm btn-warning" value="Edit"> </form>';
+					return '<form action="userDataController" method="post"><input type="text" name="id" value="' + row.id + '" hidden><input type="submit" class="btn btn-sm btn-warning" value="Edit"> </form>';
 				}
 			},
 			{
@@ -72,7 +72,7 @@ function deleteUser(obj) {
 	var id = $(obj).attr('id');
 	$.ajax({
 		type: "post",
-		url: "DeleteController",
+		url: "deleteController",
 		data: {
 			"id": id
 		},
