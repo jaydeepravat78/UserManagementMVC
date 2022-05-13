@@ -62,6 +62,6 @@
  - adding admin 
     - Sign up for a admin user
  	```
-  	update users set isAdmin=1 where id = 1
+  	update users set isAdmin=true where id = 1
   	``` 
     
