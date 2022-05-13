@@ -4,7 +4,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Log In</title>
-<link href="<@spring.url '/Assets/Libraries/bootstrap/css/bootstrap.min.css' />"
+<link href="Assets/Libraries/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <!-- bootstrap -->
 

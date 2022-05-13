@@ -179,21 +179,21 @@
 												placeholder="Street"
 												maxlength="45"
 												value="${address.street}"
-												>
+												required>
 										</div>
 										<div class="col-sm-3 mb-10">
 											<input type="text" name="addresses[${address?index}].city" class="form-control"
 												placeholder="City"
 												maxlength="45"
 												value="${address.city}"
-												>
+												required>
 										</div>
 										<div class="col-sm-3 mb-10">
 											<input type="text" name="addresses[${address?index}].state" class="form-control"
 												placeholder="State"
 												maxlength="45"
 												value="${address.state}"
-												>
+												required>
 											<input type="text" name="address_id"
 												value="<#if address??>${address.address_id}<#else>0</#if>" hidden="hidden">
 										</div>
@@ -218,21 +218,21 @@
 												placeholder="Street"
 												maxlength="45"
 												value="${address.street}"
-												>
+												required>
 										</div>
 										<div class="col-sm-3 mb-10">
 											<input type="text" name="addresses[${address?index}].city" class="form-control"
 												placeholder="City"
 												maxlength="45"
 												value="${address.city}"
-												>
+												required>
 										</div>
 										<div class="col-sm-3 mb-10">
 											<input type="text" name="addresses[${address?index}].state" class="form-control"
 												placeholder="State"
 												maxlength="45"
 												value="${address.state}"
-												>
+												required>
 											<input type="text" name="address_id"
 												value="<#if address??>${address.address_id}<#else>0</#if>" hidden="hidden">
 										</div>
@@ -254,17 +254,20 @@
 										<div class="col-sm-4 mb-10">
 											<input type="text" name="addresses[0].street" class="form-control"
 												placeholder="Street"
-												maxlength="45">
+												maxlength="45"
+												required>
 										</div>
 										<div class="col-sm-3 mb-10">
 											<input type="text" name="addresses[0].city" class="form-control"
 												placeholder="City"
-												maxlength="45">
+												maxlength="45"
+												required>
 										</div>
 										<div class="col-sm-3 mb-10">
 											<input type="text" name="addresses[0].state" class="form-control"
 												placeholder="State"
-												maxlength="45">
+												maxlength="45"
+												required>
 											<input type="text" name="address_id"
 												value="<#if address??>${address.address_id}</#if>" hidden="hidden">
 										</div>

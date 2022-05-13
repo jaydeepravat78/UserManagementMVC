@@ -16,14 +16,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao<User> dao;
 
-	public UserDao<User> getDao() {
-		return dao;
-	}
-
-	public void setDao(UserDao<User> dao) {
-		this.dao = dao;
-	}
-
 	@Override
 	public void addUser(User user) {
 		for (Address address : user.getAddresses()) {
